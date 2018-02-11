@@ -9,6 +9,7 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.7'
+gem 'figaro'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.0.0'
@@ -21,26 +22,23 @@ gem 'httparty', '~> 0.15.6'
 gem 'whenever', require: false
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'clearance', '~> 1.16', '>= 1.16.1'
-# gem 'sorcery', '~> 0.9.1'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', '~> 1.1', '>= 1.1.4', require: false
+  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1', require: false
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.3', require: false
+  gem 'capistrano3-puma', require: false
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
