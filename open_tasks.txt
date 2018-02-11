@@ -1,0 +1,6 @@
+- mailer
+- handle error w/ inputting a stock ticker that doesn't exist
+- automated task at the close of every day for stock price, etc.
+- automated task for every 15 minutes to pull news data
+- deploy to staging (test for bugs)
+- deploy to production

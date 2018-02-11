@@ -1,0 +1,50 @@
+  <% if !@stock.blank? %>
+    <h3 style="padding-bottom: 20px;">Displaying results for: <span style="color: red;"><%= @stock.ticker %></span></h3>
+  <% else %>
+    <p>No dice.</p>
+  <% end %>
+
+<%= form_tag(results_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search ticker.." %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<div class="homepage-table">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ticker</th>
+      <th>Shares</th>
+      <th>Dividend %</th>
+      <th>Account</th>
+      <th>Expected Total Income</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stocks.each do |stock| %>
+    <tr>
+      <td><%= stock.ticker %></td>
+      <td><%= stock.shares %></td>
+      <td><%= number_to_percentage((stock.dividend_yield * 100), :precision => 2) %></td>
+      <td><%= stock.account.account_name %></td>
+      <% if stock.yearly_income == 0 %>
+        <td><strong>No Current Dividend</strong></td>
+      <% else %>
+        <td><%= number_to_currency(stock.yearly_income) %></td>
+      <% end %>
+      <td class="actions">
+        <%= link_to('News', stock_path(stock)) %>
+        <%= link_to('Edit', edit_stock_path(stock)) %>
+        <%= link_to('View', stock_path(stock)) %>
+        <%= link_to('Delete', delete_stock_path(stock)) %>
+      </td>
+    </tr>
+    <% end %>    
+  </tbody>
+  </table>
+</div>
+
+
+
+

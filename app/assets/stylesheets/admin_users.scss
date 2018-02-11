@@ -1,0 +1,36 @@
+/********* Main Image *********/
+
+body, html {
+    height: 100%;
+}
+
+.bg { 
+    /* The image used */
+    background-image: image-url("city.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -17px;
+}
+
+.image-text {
+  color: white;
+  text-align: center;
+  margin-top: 20%;
+  padding: 10px 19px;
+  border-width: 1px 0px;
+  border-top-style: solid;
+  border-top-color: #fff;
+  border-bottom-style: solid;
+  border-bottom-color: #fff;
+  visibility: inherit;
+  transition: none;
+
+}  
+
+
