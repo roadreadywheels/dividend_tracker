@@ -48,7 +48,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: BABS_production
-  username: BABS
-  password: <%= ENV['BABS_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: dividend_tracker_production
+  username: urlshortner
+  password: cryptoBu!!dog22
+  host: localhost
+  port: 5432
