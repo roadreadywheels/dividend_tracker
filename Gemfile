@@ -24,6 +24,7 @@ gem 'whenever', require: false
 # gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'clearance', '~> 1.16', '>= 1.16.1'
+gem 'pg', '~> 0.18.4', group: :production 
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
