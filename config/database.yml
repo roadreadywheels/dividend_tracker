@@ -51,7 +51,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: dividend_tracker_production
-  username: urlshortner
+  username: alex
   password: cryptoBu!!dog22
   host: localhost
   port: 5432

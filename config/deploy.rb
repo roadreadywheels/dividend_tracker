@@ -4,11 +4,18 @@ lock "~> 3.10.1"
 set :application, 'dividend_tracker'
 set :repo_url, 'git@github.com:roadreadywheels/dividend_tracker.git' # Edit this to match your repository
 set :branch, :master
-set :deploy_to, "/home/delpoy/dividend_tracker" 
+set :deploy_to, '/home/deploy/dividend_tracker'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
+set :rbenv_type, :user
+set :rbenv_ruby_version, 'ruby-2.4.1' # Edit this if you are using MRI Ruby
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
+
+
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
@@ -24,8 +31,6 @@ set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
-
-SSHKit.config.command_map[:rake]  = "/.rvm/bin/#{fetch(:application)}_bundle exec rake"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
