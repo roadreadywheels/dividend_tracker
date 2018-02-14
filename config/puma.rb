@@ -15,9 +15,7 @@ port        ENV.fetch("PORT") { 3000 }
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
 
-application_path = '/home/deploy/dividend_tracker/shared/tmp'
-
-bind "unix://#{application_path}/sockets/puma.sock"
+bind "unix:/home/deploy/dividend_tracker/shared/tmp/sockets/puma.sock"
 
 
 # Specifies the number of `workers` to boot in clustered mode.
