@@ -90,4 +90,4 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 end
 
-server "34.217.106.56", user: "deploy", roles: %w[web app db], :primary => true
+# server "34.217.106.56", user: "deploy", roles: %w[web app db], :primary => true
