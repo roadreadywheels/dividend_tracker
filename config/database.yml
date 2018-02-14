@@ -50,8 +50,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: dividend_tracker_production
-  username: alex
-  password: cryptoBu!!dog22
+  database: dividendtracker_production
+  username: dividendtracker
+  password: dividendtracker
   host: localhost
   port: 5432

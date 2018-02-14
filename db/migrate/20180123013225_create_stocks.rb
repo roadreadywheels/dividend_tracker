@@ -19,7 +19,6 @@ class CreateStocks < ActiveRecord::Migration[5.1]
       t.float :october_income, :default => 0
       t.float :novemeber_income, :default => 0
       t.float :december_income, :default => 0
-      t.string :company_details
       t.float :stock_price, :default => 0
       t.float :eps, :default => 0
       t.float :pe, :default => 0
