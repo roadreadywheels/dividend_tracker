@@ -15,7 +15,7 @@ set :rbenv_ruby_version, 'ruby-2.4.1' # Edit this if you are using MRI Ruby
 # set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 # set :rbenv_roles, :all # default value
 
-
+append :linked_files, "config/secrets.yml.key"
 
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
@@ -68,3 +68,16 @@ set :puma_preload_app, false
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+namespace :deploy do
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
+  end
+
+end
