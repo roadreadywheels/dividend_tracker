@@ -48,10 +48,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  socket: /tmp/mysql.sock
+  <<: *default
+  host: localhost
   adapter: postgresql
   encoding: utf8
+  pool: 5
   database: dividendtracker_production
   username: dividendtracker
   password: dividendtracker
