@@ -95,4 +95,3 @@ end
 # kill -s SIGUSR2 pid   # Restart puma
 # kill -s SIGTERM pid   # Stop puma
 
-end
