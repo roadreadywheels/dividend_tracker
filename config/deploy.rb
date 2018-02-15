@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
-# server '34.217.106.56', port: 3000, roles: [:web, :app, :db], primary: true
+server '34.217.106.56', port: 5432, roles: [:web, :app, :db], primary: true, user: 'deploy'
 
 
 set :application, 'dividend_tracker'
@@ -46,7 +46,6 @@ namespace :puma do
     end
   end
 
-  before :start, :make_dirs
 end
 
 namespace :deploy do
@@ -79,7 +78,6 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    :restart
 end
 
 # ps aux | grep puma    # Get puma pid
