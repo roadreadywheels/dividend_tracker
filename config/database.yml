@@ -49,6 +49,7 @@ test:
 #
 production:
   database: dividendtracker_production
+  host: localhost
   adapter: postgresql
   encoding: unicode
   pool: 5
