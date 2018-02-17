@@ -74,6 +74,8 @@ GEM
     capistrano-rbenv (2.1.3)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
+    capistrano-upload-config (0.8.2)
+      capistrano (>= 3.0)
     capistrano3-puma (3.1.1)
       capistrano (~> 3.7)
       capistrano-bundler
@@ -269,6 +271,7 @@ DEPENDENCIES
   capistrano-rails-console
   capistrano-rails-db
   capistrano-rbenv (~> 2.1, >= 2.1.3)
+  capistrano-upload-config
   capistrano3-puma
   capybara (~> 2.13)
   clearance (~> 1.16, >= 1.16.1)
