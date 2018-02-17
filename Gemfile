@@ -41,6 +41,7 @@ group :development do
   gem 'capistrano3-puma', require: false
   gem 'capistrano-rails-db', require: false
   gem 'capistrano-rails-console', require: false
+  gem 'capistrano-nginx', require: false
   gem 'sshkit-sudo'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
