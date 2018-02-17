@@ -21,3 +21,5 @@ config/database.yml
 
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
+/config/database.production.yml
+/config/secrets.production.yml
