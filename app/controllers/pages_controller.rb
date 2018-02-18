@@ -34,6 +34,7 @@ class PagesController < ApplicationController
     @income = 0
 
     @stocks.each do |stock|
+      stock.yearly_income = 0
       @income += stock.yearly_income
     end
   end
