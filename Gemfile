@@ -6,26 +6,21 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1.5'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.7'
-gem 'figaro'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'quandl', '~> 1.0', '>= 1.0.3'
 gem 'httparty', '~> 0.15.6'
 gem 'whenever', require: false
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'clearance', '~> 1.16', '>= 1.16.1'
-gem 'pg', '~> 0.18.4', group: :production 
-# gem 'net-ssh', '~> 3.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -34,16 +29,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano', '~> 3.10', '>= 3.10.1', require: false
-  gem 'capistrano-bundler', '~> 1.1', '>= 1.1.4', require: false
-  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1', require: false
-  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.3', require: false
-  gem 'capistrano3-puma', require: false
-  gem 'capistrano-rails-db', require: false
-  gem 'capistrano-rails-console', require: false
-  gem 'capistrano-nginx', require: false
-  gem 'capistrano-upload-config'
-  gem 'sshkit-sudo'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'

@@ -48,10 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  database: dividendtracker_production
-  host: localhost
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: dividendtracker
-  password: dividendtracker
+  <<: *default
+  database: BABS_production
+  username: alex_smith
+  password: <%= ENV['TRACK_DATABASE_PASSWORD'] %>
