@@ -12,8 +12,8 @@ class StocksController < ApplicationController
 
   def show
     @stock = Stock.find(params[:id])
-    # Stock.iex_api
-    # Stock.iex_api_dividend
+    Stock.iex_api
+    Stock.iex_api_dividend
     @date = Date.today
     @date = @date.strftime("%B")
 
@@ -29,7 +29,7 @@ class StocksController < ApplicationController
      @stock = Stock.new(stock_params)
     if @stock.save
       flash[:notice] = "Congratulations you have just added #{@stock.ticker}."
-      redirect_to(root_path)
+      redirect_to(pages_path)
     else
       render('new')
     end

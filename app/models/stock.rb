@@ -92,11 +92,15 @@ class Stock < ApplicationRecord
 
       ### Delete Duplicate Months ###
       dividends.each do |x|
-        m = DateTime.parse(x['paymentDate']).to_date.strftime("%B").to_s
-        if month.include?(m)
-          next
+        unless x.nil? 
+          m = DateTime.parse(x['paymentDate']).to_date.strftime("%B").to_s
+          if month.include?(m)
+            next
+          else
+            month << m
+          end
         else
-          month << m
+          next
         end
       end
 
